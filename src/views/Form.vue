@@ -20,6 +20,7 @@
                 type="text"
                 name="age"
                 v-model="user.age"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" 
               />
               <label class="input_label" for="age">Возраст</label>
             </div>
@@ -56,6 +57,7 @@
                     type="text"
                     name="kid_age"
                     v-model="user.age"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                   />
                   <label class="input_label" for="kid_age"
                     >Возраст ребенка</label
