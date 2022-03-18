@@ -8,18 +8,18 @@
               <img src="@/assets/logo.png" alt="Логотип" />
             </a>
             <nav class="header__items">
-              <div
+              <li
                 class="header__item"
-                @click="$router.push({ path: '/' })"
+                @click="$router.push({ path: '/' }).catch(() => {})"
               >
                 Форма
-              </div>
-              <div
+              </li>
+              <li
                 class="header__item"
-                @click="$router.push({ path: '/preview' })"
+                @click="$router.push({ path: '/preview' }).catch(() => {})"
               >
                 Превью
-              </div>
+              </li>
             </nav>
             <div></div>
           </div>
@@ -38,4 +38,9 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+};
+</script>
  
