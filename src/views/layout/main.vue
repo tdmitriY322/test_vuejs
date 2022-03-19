@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <div>
       <header class="header">
         <div class="container">
@@ -30,12 +30,9 @@
     <div class="content">
       <slot />
     </div>
-
-    <div>
       <footer class="footer">
         <div class="footer__text">all rights reserved</div>
       </footer>
-    </div>
   </div>
 </template>
 

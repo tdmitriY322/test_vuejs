@@ -20,7 +20,7 @@
                 type="text"
                 name="age"
                 v-model="user.age"
-                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" 
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
               />
               <label class="input_label" for="age">Возраст</label>
             </div>
@@ -75,7 +75,7 @@
             </template>
           </div>
 
-          <button class="button button_save" @click="saveData"  >
+          <button class="button button_save" @click="saveData">
             Сохранить
           </button>
         </div>
@@ -103,25 +103,14 @@ export default {
       user_kids: "GET_USER_KIDS",
     }),
     addKid() {
-      if (this.kids.length == 4) {
-        console.log(this.kids.length);
-        let newUser = {
-          id: Date.now(),
-          name: "",
-          age: "", // можно по другому, но я пока не понимаю как
-        };
-        this.kids.push(newUser);
-        this.isDiasbled = true;
-        console.log(this.isDiasbled);
-      } else {
-        let newUser = {
-          id: Date.now(),
-          name: "",
-          age: "",
-        };
-        this.kids.push(newUser);
-        console.log(this.kids);
-      }
+      this.isDiasbled = this.kids.length == 4;
+      let newUser = {
+        id: Date.now(),
+        name: "",
+        age: "",
+      };
+      this.kids.push(newUser);
+      console.log(this.kids);
       console.log("addKid click work");
     },
     deleteKid(id) {
@@ -132,7 +121,7 @@ export default {
       console.log(this.user_data(1));
       this.user_data(this.user);
       this.user_kids(this.kids);
-      this.$router.push({ path: '/preview' })
+      this.$router.push({ path: "/preview" });
     },
   },
 };
