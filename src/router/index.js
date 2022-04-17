@@ -1,25 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Form from '@/views/Form.vue'
+import Hello from '@/components/HelloWorld.vue'
 
 
 Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    name: 'MyForm',
+    name: 'MainPage',
     meta: {
       layout: 'main'
     },
-    component: Form
-  },
-  {
-    path: '/preview',
-    name: 'MyPre',
-    meta: {
-      layout: 'main'
-    },
-    component: () => import('@/views/Preview.vue')
+    component: Hello
   },
 ]
 
